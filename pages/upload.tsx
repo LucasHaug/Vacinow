@@ -8,11 +8,11 @@ const Upload = () => {
 
     function handleSubmit(event: FormEvent) {
         event.preventDefault();
-        
+
         if (!image) {
             return;
         }
-        
+        console.log(process.env.API_URL)
         const data = new FormData();
 
         data.append('image', image)
