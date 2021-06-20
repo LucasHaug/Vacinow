@@ -12,7 +12,6 @@ const Upload = () => {
         if (!image) {
             return;
         }
-        console.log(process.env.API_URL)
         const data = new FormData();
 
         data.append('image', image)
