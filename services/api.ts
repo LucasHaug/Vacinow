@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://api.vacinow.tk'
+    baseURL: 'https://api.vacinow.tk'
 })
 
 export default api;
