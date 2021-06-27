@@ -58,7 +58,7 @@ jobs:
           docker container prune -f
           docker image prune -af
           docker pull vacinow/frontend:latest
-          docker run --env-file ~/.frontend.env --name vacinow-frontend --restart unless-stopped -p 8000:8000 -d vacinow/frontend:latest
+          docker run --env-file ~/.frontend.env --name vacinow-frontend --restart unless-stopped -p 3000:3000 -d vacinow/frontend:latest
           
 
     
