@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap'
+import { Button, Form, Col, Row } from 'react-bootstrap'
 import styles from './styles/homepage.module.css'
 import Image from 'next/image'
 
