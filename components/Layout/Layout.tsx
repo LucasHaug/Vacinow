@@ -22,7 +22,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <header>
     </header>
     {children}
-    <footer>
+    <footer className={styles.footer}>
       <hr />
       <span>LabSoft - G12</span>
     </footer>

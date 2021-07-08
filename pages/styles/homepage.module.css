@@ -1,0 +1,28 @@
+.container{
+    text-align: center;
+}
+
+.title{
+    margin-top: 5%;
+    color: green;
+    font-size: 1000%;
+}
+
+.links{
+    margin-top: 5%;
+    text-align: center;
+    height: 500px;
+    background-image: linear-gradient( green, rgb(44, 168, 44));
+    position: relative;
+}
+
+.linkButton{
+    border-radius: 50px;
+    width: 400px;
+    background-color: rgb(255, 166, 0);
+    margin-top: 200px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 200%;
+}
