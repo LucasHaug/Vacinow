@@ -16,7 +16,7 @@ const Upload = () => {
 
         data.append('image', image)
 
-        api.post('/readfile', data)
+        api.post('/readfile/', data)
         .then(function (response) {
             alert(response.data.text);
         })
