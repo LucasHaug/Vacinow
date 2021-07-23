@@ -1,0 +1,80 @@
+.container{
+    text-align: center;
+}
+
+/* Header */
+.header{
+    grid-area: header; /* nome dado no grid-template-areas*/
+}
+
+.Logo {
+    background-image: url(../images/vacinow1.png);
+  }
+
+.title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    /* color: #38241b; */
+    color: var(--nome2);
+    /* font-size: 2.8rem; */
+    font-size: clamp(20px, 5vw, 2.8rem);
+
+    margin-bottom: 2.4rem;
+}
+
+.mainText{
+    font-family: 'Open Sans', sans-serif;
+    color: #38241b;
+    padding: 1rem;
+}
+
+
+/* Main */
+.main{
+    grid-area: center; /* ?? */
+
+    display: flex;
+    align-items: center; /* alinhar ao centro sempre que usar display flex */
+    width: min(36.3rem 100%);
+}
+
+.description{
+    display: block;
+    align-items: center; /* alinhar ao centro sempre que usar display flex */
+    padding: 1rem;
+}
+
+.links{
+    display: block;
+    align-items:center;
+    
+    margin: 5rem;
+    align-content: space-between;
+
+    border-radius: 1rem;
+    background-color: #719a0a;
+    
+    width: 60rem;
+    height: 30rem;
+    
+}
+
+.linkButton{
+    background-color: #ffd301;
+    border-color: #cc6a2a;
+    color: #38241b;
+
+    border-radius: 3rem;
+    border-width: 0.5rem;
+
+    width: 40rem;
+    margin: 2rem;
+    padding: 2rem;
+    font-size: 200%;
+}
+
+.linkButton:hover{
+    /* background-color: var(--white); */
+    /* background-color: #ebebeb; */
+    filter: brightness(1.2);
+}

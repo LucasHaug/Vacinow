@@ -1,0 +1,22 @@
+  
+.upload{
+    /* background-color: var(--yellow); */
+    background-color: #c7c7c5;
+
+    border: 0.1rem solid;
+    border-radius: 1rem;
+    /* border-color: var(--brown); */
+    border-color: #38241b;
+
+    color: #38241b;
+
+    width: 40rem;
+    margin: 1rem;
+    padding: 2rem;
+    font-size: 200%;
+}
+.upload:hover{
+    /* background-color: var(--white); */
+    /* background-color: #ebebeb; */
+    filter: brightness(1.2);
+}
