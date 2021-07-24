@@ -18,7 +18,7 @@ const Upload = () => {
 
         api.post('/readfile/', data)
         .then(function (response) {
-            console.log(response.data.text);
+            console.log(response.data);
         })
         .catch(function (error) {
             console.log(error);
