@@ -1,10 +1,10 @@
 import { Button } from 'react-bootstrap'
 
 const Homepage = () => (
-<div className="container">
+<div className="container" id="home">
     <div className="header">
         <a href="/">
-            <img src="../images/vacinow3.png" alt="vacinow-logo" className="logo"/>
+            <img src="../images/vacinow3.png" alt="vacinow-logo"/>
         </a>
         <hr />
     </div>
