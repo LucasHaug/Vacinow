@@ -1,0 +1,44 @@
+/*
+* Configurações comuns a todas as páginas
+*/
+
+/* remove css pré-definido pelo navegador */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  /* variáveis: cores do pallete */
+  --dark-green: #236026;
+  --green: #2A752E;
+  --olive: #958717;
+  --gold: #CA900C;
+  --orange: #FF9800;
+  --yellow: #FFA117;
+  --champagne: #ffd08b;
+
+  /* seta o padrão do rem como 10px */
+  font-size: 62.5%;
+}
+
+body{
+  display: flex;
+  
+  height: 100vh; /* deixar as telas sem scroll */
+  width: 100vw;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 1.6rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
+}
+
+/* Repetições */
+
+/* botão para outra tela */
+.linkButton{
+
+}
