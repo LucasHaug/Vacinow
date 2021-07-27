@@ -27,6 +27,8 @@
 .header{
     grid-area: header; /* nome dado no grid-template-areas */
     justify-content: center;
+    margin: auto;
+    position:relative;
 }
 
 .header hr{

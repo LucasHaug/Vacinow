@@ -5,3 +5,32 @@
 .form-control{
     border-radius: 50px;
 }
+
+.formButton{
+
+    border-width: 10px;
+    border-radius: 50px;
+}
+
+.header1{
+    grid-area: header; /* nome dado no grid-template-areas */
+    justify-content: center;
+    margin: auto;
+    position:relative;
+}
+
+.containerForm{
+    /* margin-left: 32%; */
+}
+
+.imgForm{
+    width: 50%;
+}
+
+.forms{
+        padding: 10px;
+        margin-bottom:10px;
+        margin-top:10px;
+        /* margin-left: 10%; */
+        width:1000px;
+}

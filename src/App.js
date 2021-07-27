@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 
 import Homepage from './screens/homepage';
 import Upload from './screens/upload';
-import Registration from './screens/registrationForm';
+import Registration from './screens/registrationForm/registrationForm';
 
 
 function App() {
