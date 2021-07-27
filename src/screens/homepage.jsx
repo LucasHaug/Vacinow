@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap'
+
 import '../styles/homepage.css'
-import '../styles/global.css'
 
 
 const Homepage = () => (
@@ -16,21 +16,17 @@ const Homepage = () => (
         <h1 className="title">Cadastre uma vacina:</h1>
     </div>
 
-    <div className="main">
-        <div className="links">
-            {/* botão de upload */}
-            <h2 className="mainText">Faça upload do seu formulário scanneado</h2>
-            {/* <Button className={styles.linkButton} href="/upload">Login</Button> */}
+    <main className="links">
+        <div className="linkBox">
+            <h1 className="mainText">Faça upload do seu formulário scanneado</h1>
             <Button className="linkButton" href="/upload"> <img src="../images/upload-big-arrow.png" alt="upload-icon" className="icon"/><p>Upload</p></Button>
 
         </div>
-        <div className="links">
-            {/* botão de cadastro */}
-            <h2 className="mainText"> Preencha o formulário online</h2>
-            {/* <Button className={styles.linkButton} href="/upload">Login</Button> */}
-            <Button style={{ marginTop: 52 }} className="linkButton" href="/registration"><img src="../images/contact-form.png" alt="form-icon" className="icon"/><p>Preencher</p> </Button>
+        <div className="linkBox">
+            <h1 className="mainText"> Preencha o formulário online</h1>
+            <Button className="linkButton" href="/registration"><img src="../images/contact-form.png" alt="form-icon" className="icon"/><p>Preencher</p> </Button>
         </div>
-    </div>
+    </main>
 </div>
 )
 

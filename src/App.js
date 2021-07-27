@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 
+import './styles/global.css'
+
 import Homepage from './screens/homepage';
 import Upload from './screens/upload';
 import Registration from './screens/registrationForm/registrationForm';

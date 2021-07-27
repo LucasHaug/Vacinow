@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from './formTemplate'
-// import '../../styles/homepage.css'
+
+// import '../../styles/global.css'
 
 function RegistrationForm() {
     var forms = []
@@ -26,6 +27,10 @@ function RegistrationForm() {
                 </a>
                 <hr />
             </header>
+            <main>
+            <div className="description">
+                <h1> Orientação básica </h1>
+            </div>
 
             <div className="formReg">
                 {formList()}
@@ -44,12 +49,13 @@ function RegistrationForm() {
                 <button className="formButton" onClick={()=> {
                     form.pop()
                     setForm([...form,])
-                    }}>
+                }}>
                     <img src="../images/minus.png" alt="minus icon" className="icon"/>
                     <p>Delete Form</p>
                 </button>
                 
             </div>
+            </main>
 
         </div>
     );

@@ -33,7 +33,7 @@ body{
   width: 100vw;
 
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(14px, 1.6rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
 }
 
@@ -42,7 +42,7 @@ body{
   margin: 0 auto;
 }
 
-/* mesmo header em todas as telas */
+/* mesmo Header em todas as telas */
 .content header{
   width: 70%;
   margin: 0 15rem;
@@ -59,4 +59,12 @@ body{
   border: 0.2rem solid var(--olive);
   background-color: var(--olive); 
   opacity: 0.5;
+}
+
+/* Descrição em todas as telas */
+.content .description{
+  display: flex;
+  justify-content: center;
+  margin-right: 15rem; /* talvez alinhar melhor */
+  padding: 2rem 2rem;
 }
