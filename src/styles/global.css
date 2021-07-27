@@ -34,7 +34,7 @@ body{
 
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
-  font-size: clamp(14px, 1.6rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
+  font-size: clamp(14px, 1.2rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
 }
 
 .content{
@@ -45,7 +45,7 @@ body{
 /* mesmo Header em todas as telas */
 .content header{
   width: 70%;
-  margin: 0 15rem;
+  margin: 0 20rem;
 }
 
 .content header img{
@@ -67,4 +67,37 @@ body{
   justify-content: center;
   margin-right: 15rem; /* talvez alinhar melhor */
   padding: 2rem 2rem;
+}
+
+/* Botões comuns a todas as telas */
+.content button{
+  background-color: var(--orange);
+
+  border-radius: 2rem;
+  border-width: 1rem;
+  box-shadow: 0 0 1rem var(--yellow);
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  box-shadow: 0 0 0.5rem var(--yellow);
+  /* width definido por página */
+}
+
+.content button:hover{
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.content .icon{
+  height: 5rem;
+  margin: 1rem 2rem;
+}
+
+.content button p{
+  font-size: clamp(14px, 8rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
+
+  padding: 1rem;
+  margin: 1rem 2rem;
 }
