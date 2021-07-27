@@ -1,5 +1,6 @@
 import Grid from "react-fast-grid";
 
+
 const styles = {
     outer: {
         borderRadius: 5,
@@ -7,9 +8,24 @@ const styles = {
     },
 };
 
-const Form = (props) => {
-    console.log(props.forms)
 
+const Form = (props) => {
+    var forms = []
+    var name = ""
+    var id = props.forms
+
+    function onChangeName(e){
+        name = e.target.value
+        // id = e.target.id
+    }
+
+    function handleCheck(e){
+        forms = [...forms,[name,id]]
+        console.log(forms)
+        e.preventDefault();
+    }
+
+    props.submit("oi")
     return (
         <form className="forms" style={styles.outer}>
             <Grid container spacing={2} direction="row">
@@ -18,7 +34,7 @@ const Form = (props) => {
                         <div>Nome:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input id="fname" onChange={onChangeName}/>
                     </Grid>
                     <Grid item>
                         <div>Data aplicação:</div>
@@ -74,6 +90,9 @@ const Form = (props) => {
                     </Grid>
                 </Grid>
             </Grid>
+            <button type="submit" onClick={(e)=> { handleCheck(e)}}>
+                    <p>Check</p>
+                </button>
         </form>
     )
 }
