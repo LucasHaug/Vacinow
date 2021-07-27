@@ -18,32 +18,38 @@ function RegistrationForm() {
     }
 
     return (
-        <div className="containerForm" >
+        <div className="container" id="forms" >
             <div className="headerForm">
                 <a href="/">
                     <img src="../images/vacinow3.png" alt="vacinow-logo" className="imgForm" />
                 </a>
+                <hr />
             </div>
-            {formList()}
-            <button 
-            type="submit" 
-            onClick={() => { handleSubmit()}}>
-                Submit
+
+            <div className="formReg">
+                {formList()}
+                <button type="submit" onClick={()=> { handleSubmit()}}>
+                    <img src="../images/send.png" alt="minus icon" className="icon" />
+                    <p>Submit</p>
                 </button>
-            <button
-                className="formButton"
-                onClick={() => { setForm([...form, form.length + 1]) }
-                }>
-                + Add Form
-            </button>
-            <button
-                className="formButton"
-                onClick={() => {
+            </div>
+
+            <div className="formBtns">
+                <button className="formButton" onClick={()=> { setForm([...form, form.length + 1]) }
+                    }>
+                    <img src="../images/plus.png" alt="plus icon" className="icon"/>
+                    <p>Add Form</p>
+                </button>
+                <button className="formButton" onClick={()=> {
                     form.pop()
                     setForm([...form,])
-                }}>
-                - Delete Form
-            </button>
+                    }}>
+                    <img src="../images/minus.png" alt="minus icon" className="icon"/>
+                    <p>Delete Form</p>
+                </button>
+                
+            </div>
+
         </div>
     );
 }
