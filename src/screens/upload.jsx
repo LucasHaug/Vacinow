@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Button } from 'react-bootstrap'
 import api from 'axios'
 
 // import '../styles/global.css'
@@ -59,10 +58,10 @@ const Upload = () => {
                         </label> */}
                         <input onChange={handleImage} type="file" accept="image/*;capture=camera" id="imgButton" />
 
-                        <Button type="submit" className="linkButton">
+                        <button type="submit" className="linkButton">
                             <img src="../images/send.png" alt="send-icon" className="icon" />
                             <p>Enviar</p>
-                        </Button>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -70,10 +69,10 @@ const Upload = () => {
             {/*! falhei no alinhamento deste inferno: */}
             <div id="bottom">
                 <h2>Ou então preencha o formulário diretamente: </h2>
-                <Button href="/registration" className="linkButton">
+                <button onClick={()=>{window.location = "/registration"}} className="linkButton">
                     <img src="../images/contact-form.png" alt="forms-icon" className="icon" />
                     <p>Preencher Formulário</p>
-                </Button>
+                </button>
             </div>
         </main>
 

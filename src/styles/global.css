@@ -81,6 +81,8 @@ body{
   justify-content: center;
   align-content: center;
 
+  padding: 1rem;
+
   box-shadow: 0 0 0.5rem var(--yellow);
   /* width definido por página */
 }
@@ -92,7 +94,7 @@ body{
 
 .content .icon{
   height: 5rem;
-  margin: 1rem 2rem;
+  margin: 2rem 2rem;
 }
 
 .content button p{
