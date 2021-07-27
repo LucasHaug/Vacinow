@@ -1,12 +1,16 @@
 import { Button } from 'react-bootstrap'
+import '../styles/homepage.css'
+import '../styles/global.css'
+
 
 const Homepage = () => (
-<div className="container" id="home">
-    <div className="header" >
+<div className="content" id="home">
+    <header>
         <a href="/">
             <img src="../images/vacinow3.png" alt="vacinow-logo"/>
         </a>
-    </div>
+        <hr />
+    </header>
 
     <div className="description">
         <h1 className="title">Cadastre uma vacina:</h1>

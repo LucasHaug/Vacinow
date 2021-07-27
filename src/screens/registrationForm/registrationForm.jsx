@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './formTemplate'
+// import '../../styles/homepage.css'
 
 function RegistrationForm() {
     var forms = []
@@ -18,13 +19,13 @@ function RegistrationForm() {
     }
 
     return (
-        <div className="container" id="forms" >
-            <div className="headerForm">
+        <div className="content" id="forms" >
+            <header>
                 <a href="/">
                     <img src="../images/vacinow3.png" alt="vacinow-logo" className="imgForm" />
                 </a>
                 <hr />
-            </div>
+            </header>
 
             <div className="formReg">
                 {formList()}

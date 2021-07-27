@@ -38,17 +38,14 @@ const Upload = () => {
         setImage(event.target.files[0])
     }
     return (
-    <div className="container" id="upload">
-        {/* todo:  Deveria ser replicado só né, fiz hardcodado mesmo */}
-        <div className="header">
+    <div className="content" id="upload">
+        <header>
             <a href="/">
                 <img src="../images/vacinow3.png" alt="vacinow-logo"/>
             </a>
             <hr />
-            
-        </div>
+        </header>
 
-        {/* ?? */}
         <div className="description">
             <h2>Fala upload do formulário scanneado: </h2>
         </div>

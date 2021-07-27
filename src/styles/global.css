@@ -28,7 +28,8 @@ html {
 body{
   display: flex;
   
-  height: 100vh; /* deixar as telas sem scroll */
+  /* deixar as telas sem scroll */
+  height: 100vh; 
   width: 100vw;
 
   font-family: 'Open Sans', sans-serif;
@@ -36,9 +37,26 @@ body{
   font-size: clamp(14px, 1.6rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
 }
 
-/* Repetições */
+.content{
+  width: 100%;
+  margin: 0 auto;
+}
 
-/* botão para outra tela */
-.linkButton{
+/* mesmo header em todas as telas */
+.content header{
+  width: 70%;
+  margin: 0 15rem;
+}
 
+.content header img{
+  width: 100%;
+}
+
+.content header hr{
+  display: flex;
+  align-items: center; /* define alinhamento vertical */
+  
+  border: 0.2rem solid var(--olive);
+  background-color: var(--olive); 
+  opacity: 0.5;
 }
