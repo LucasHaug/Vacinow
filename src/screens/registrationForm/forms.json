@@ -1,11 +1,11 @@
 {
-    "nome": "",
-    "data":"",
-    "local":"",
-    "idade":"",
-    "nomeVacina":"",
-    "laboratorio":"",
-    "CPF":"",
-    "servico":"",
-    "lote":""
+    "name": "",
+    "age":"",
+    "cpf":"",
+    "date":"",
+    "vaccine":"",
+    "nsus":"",
+    "place":"",
+    "lab":"",
+    "batch":""
 }

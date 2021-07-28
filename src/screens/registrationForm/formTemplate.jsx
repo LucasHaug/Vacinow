@@ -12,31 +12,31 @@ const styles = {
 const Form = (props) => {
 
     function onChangeName(e){
-        props.forms.nome = e.target.value
+        props.forms.name = e.target.value
     }
     function onChangeDate(e){
-        props.forms.data = e.target.value
+        props.forms.date = e.target.value
     }
     function onChangeLocal(e){
-        props.forms.local = e.target.value
+        props.forms.place = e.target.value
     }
     function onChangeAge(e){
-        props.forms.idade= e.target.value
+        props.forms.age= e.target.value
     }
     function onChangeNameShoot(e){
-        props.forms.nomeVacina = e.target.value
+        props.forms.vaccine = e.target.value
     }
     function onChangeLab(e){
-        props.forms.laboratorio = e.target.value
+        props.forms.lab = e.target.value
     }
     function onChangeCPF(e){
-        props.forms.CPF = e.target.value
+        props.forms.cpf = e.target.value
     }
     function onChangeService(e){
-        props.forms.servico = e.target.value
+        props.forms.nsus = e.target.value
     }
     function onChangeLote(e){
-        props.forms.lote = e.target.value
+        props.forms.batch = e.target.value
     }
 
     return (

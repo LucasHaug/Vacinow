@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "./formTemplate";
+import FormTemplate from "./formTemplate";
 
 import formsJson from "./forms.json"
 import "../../styles/registrationForm.css";
@@ -14,7 +14,7 @@ function RegistrationForm() {
   function formList() {
     return form.map((formVecSend) => {
       console.log(formVecSend.id)
-      return <Form submit={handleSubmit} forms={formVecSend} key={formVecSend.id} />;
+      return <FormTemplate forms={formVecSend} key={formVecSend.id} />;
     });
   }
 

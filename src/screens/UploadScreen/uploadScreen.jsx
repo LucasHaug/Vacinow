@@ -32,7 +32,8 @@ class uploadScreen extends Component {
         this.setState({
             uploadedFiles: this.state.uploadedFiles.concat(uploadedFiles)
         });
-        upload = files
+        console.log(files[0])
+        upload = files[0]
     };
 
     handleDelete = async id => {
@@ -47,24 +48,26 @@ class uploadScreen extends Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault()
-        console.log("oi", upload[0])
-
-        if (!upload[0]) {
+        event.preventDefault();
+        console.log("oi", upload)
+        
+        if (!upload) {
+            alert("Adicione um arquivo por favor")
             return
         }
         const data = new FormData()
-
-        data.append('image', upload[0])
-
+        
+        data.append('image', upload)
+        
         console.log("data", data)
         api.post('https://api.vacinow.tk/readfile', data)
-            .then(function (response) {
-                alert(response.data.text)
-            })
-            .catch(function (error) {
-                console.log(error)
-            })
+        .then(function (response) {
+            alert(response.data.text)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+        // window.location = "/checkpage"
     }
 
     render() {
