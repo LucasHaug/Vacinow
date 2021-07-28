@@ -1,25 +1,19 @@
-FROM node:alpine
+FROM node:10.16 as builder
 
-# Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json yarn.lock ./
+RUN yarn
 
-# install dependencies
-RUN yarn install --frozen-lockfile
-
-# Copy all files
-COPY . .
-
-# build
+COPY . ./
 RUN yarn build
 
-# Expose the listening port
+FROM node:10.16 as runner
+
+COPY --from=builder /usr/src/app/ .
+
 EXPOSE 3000
 
-# Run container as non-root (unprivileged) user
-# The node user is provided in the Node.js Alpine base image
 USER node
 
-CMD ["yarn", "start"]
+CMD [ "yarn", "start" ]
