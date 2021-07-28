@@ -10,24 +10,38 @@ const styles = {
 
 
 const Form = (props) => {
-    var forms = []
-    var name = ""
-    var id = props.forms
 
     function onChangeName(e){
-        name = e.target.value
-        // id = e.target.id
+        props.forms.nome = e.target.value
+    }
+    function onChangeDate(e){
+        props.forms.data = e.target.value
+    }
+    function onChangeLocal(e){
+        props.forms.local = e.target.value
+    }
+    function onChangeAge(e){
+        props.forms.idade= e.target.value
+    }
+    function onChangeNameShoot(e){
+        props.forms.nomeVacina = e.target.value
+    }
+    function onChangeLab(e){
+        props.forms.laboratorio = e.target.value
+    }
+    function onChangeCPF(e){
+        props.forms.CPF = e.target.value
+    }
+    function onChangeService(e){
+        props.forms.servico = e.target.value
+    }
+    function onChangeLote(e){
+        props.forms.lote = e.target.value
     }
 
-    function handleCheck(e){
-        forms = [...forms,[name,id]]
-        console.log(forms)
-        e.preventDefault();
-    }
-
-    props.submit("oi")
     return (
-        <form className="forms" style={styles.outer}>
+
+        <form className="forms" style={styles.outer} key={props.forms.id}>
             <Grid container spacing={2} direction="row">
                 <Grid container spacing={1} alignItems="center" justify="left">
                     <Grid item>
@@ -40,13 +54,13 @@ const Form = (props) => {
                         <div>Data aplicação:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeDate}/>
                     </Grid>
                     <Grid item>
                         <div>Local de aplicação:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeLocal}/>
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} alignItems="center" justify="left">
@@ -54,19 +68,19 @@ const Form = (props) => {
                         <div>Idade:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeAge}/>
                     </Grid>
                     <Grid item>
                         <div>Nome da vacina:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeNameShoot}/>
                     </Grid>
                     <Grid item>
                         <div>Laboratório:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeLab}/>
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} alignItems="center" justify="left">
@@ -74,25 +88,22 @@ const Form = (props) => {
                         <div>CPF:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeCPF}/>
                     </Grid>
                     <Grid item>
                         <div>Serviço de Saúde:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeService}/>
                     </Grid>
                     <Grid item>
                         <div>Lote:</div>
                     </Grid>
                     <Grid item>
-                        <input />
+                        <input onChange={onChangeLote}/>
                     </Grid>
                 </Grid>
             </Grid>
-            <button type="submit" onClick={(e)=> { handleCheck(e)}}>
-                    <p>Check</p>
-                </button>
         </form>
     )
 }

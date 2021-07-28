@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import Form from "./formTemplate";
-import Grid from "react-fast-grid";
 
+import formsJson from "./forms.json"
 import "../../styles/registrationForm.css";
 
+var id = 0
+
 function RegistrationForm() {
-  var forms = [];
-  const [form, setForm] = useState([1]);
+  var initialForms = [formsJson];
+  initialForms.id = 0
+  const [form, setForm] = useState([initialForms]);
 
   function formList() {
-    return form.map((formID) => {
-      console.log(formID);
-      return <Form />;
+    return form.map((formVecSend) => {
+      console.log(formVecSend.id)
+      return <Form submit={handleSubmit} forms={formVecSend} key={formVecSend.id} />;
     });
   }
 
-  function handleSubmit(receiveForms) {
+  function handleSubmit() {
     // manda pelo axios
-    console.log(receiveForms);
+    console.log("form atulaizado", form)
   }
 
   return (
@@ -39,7 +42,10 @@ function RegistrationForm() {
 
         <div className="formInputs">
           <div className="formTable">
-            {formList()}
+            <li>
+              {formList()}
+
+            </li>
             <button
               type="submit"
               onClick={() => {
@@ -55,7 +61,10 @@ function RegistrationForm() {
             <button
               className="formButton addDel"
               onClick={() => {
-                setForm([...form, form.length + 1]);
+                var newForms = [formsJson];
+                id = id + 1
+                newForms.id = id
+                setForm([...form, newForms]);
               }}
             >
               <img src="../images/plus.png" alt="plus icon" className="icon" />
@@ -64,6 +73,7 @@ function RegistrationForm() {
             <button
               className="formButton addDel"
               onClick={() => {
+                id = id - 1
                 form.pop();
                 setForm([...form]);
               }}
