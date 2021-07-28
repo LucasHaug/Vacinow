@@ -9,15 +9,15 @@ const Upload = () => {
 
     function handleSubmit(event) {
         event.preventDefault()
-
+        
+        console.log(image)
         if (!image) {
             return
         }
         const data = new FormData()
-
         data.append('image', image)
 
-        api.post('/readfile', data)
+        api.post('https://api.vacinow.tk/readfile', data)
             .then(function (response) {
                 alert(response.data.text)
             })
@@ -26,15 +26,13 @@ const Upload = () => {
             })
     }
 
-    //todo: preview da imagem
-    function handleImage(event) {
-        if (!event.target.files) {
-            return
-        } else {
-            // src = URL.createObjectURL(event.target.files[0])
+    function handleImage(event){
+        if (!event.target.files){
+            return;
         }
-        setImage(event.target.files[0])
-    }
+        setImage(event.target.files[0]);
+    };
+    //todo: preview da imagem
     return (
     <div className="content" id="upload">
         <header>
@@ -51,11 +49,7 @@ const Upload = () => {
 
             <div className="upload">
                     <form onSubmit={handleSubmit}>
-                        {/* <label for="imgButton">
-                            <img src="../images/image-icon.png" alt="img-icon" className="icon" />
-                            <p>Selecione sua imagem</p>
-                        </label> */}
-                        <input onChange={handleImage} type="file" accept="image/*;capture=camera" id="imgButton" />
+                        <input  onChange={handleImage} type="file" accept="image/*;capture=camera" id="imgButton" />
 
                         <button type="submit" className="linkButton">
                             <img src="../images/send.png" alt="send-icon" className="icon" />

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import './styles/global.css'
 
 import Homepage from './screens/homepage';
-import Upload from './screens/upload';
+import Upload from './screens/UploadScreen/uploadScreen';
 import Registration from './screens/registrationForm/registrationForm';
 
 
