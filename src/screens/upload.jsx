@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import api from 'axios'
 
-// import '../styles/global.css'
+import '../styles/upload.css'
 
 
 const Upload = () => {
@@ -49,8 +49,7 @@ const Upload = () => {
                 <h1>Faça upload do formulário scanneado: </h1>
             </div>
 
-            <div id="top">
-                <div className="fileUpload">
+            <div className="upload">
                     <form onSubmit={handleSubmit}>
                         {/* <label for="imgButton">
                             <img src="../images/image-icon.png" alt="img-icon" className="icon" />
@@ -63,11 +62,8 @@ const Upload = () => {
                             <p>Enviar</p>
                         </button>
                     </form>
-                </div>
-            </div>
 
             {/*! falhei no alinhamento deste inferno: */}
-            <div id="bottom">
                 <h2>Ou então preencha o formulário diretamente: </h2>
                 <button onClick={()=>{window.location = "/registration"}} className="linkButton">
                     <img src="../images/contact-form.png" alt="forms-icon" className="icon" />
