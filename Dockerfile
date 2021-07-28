@@ -14,6 +14,4 @@ COPY --from=builder /usr/src/app/ .
 
 EXPOSE 3000
 
-USER node
-
 CMD [ "yarn", "start" ]
