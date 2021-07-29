@@ -5,10 +5,11 @@ import filesize from "filesize";
 import api from "axios";
 import "../../styles/upload.css";
 
-
 import Upload from "./Upload";
 import FileList from "./FileList";
 import FormTemplate from "../registrationForm/formTemplate"
+
+import API_URL from "../../config";
 
 var upload
 var responseForms
@@ -40,7 +41,7 @@ class uploadScreen extends Component {
         this.setState({
             uploadedFiles: this.state.uploadedFiles.concat(uploadedFiles)
         });
-        
+
         upload = files
         console.log("up",upload)
     };
@@ -68,7 +69,7 @@ class uploadScreen extends Component {
         data.append('image', upload[upload.length-1])
 
         alert("Estamos enviando seu forms")
-        await api.post('https://api.vacinow.tk/readfile/', data)
+        await api.post(API_URL + '/readfile/', data)
             .then((response) => {
                 console.log(response.data)
                 responseForms = response.data
@@ -94,7 +95,7 @@ class uploadScreen extends Component {
             }
         })
         console.log("response", responseFormsVdd)
-        await api.post('https://api.vacinow.tk/formsubmit/', responseFormsVdd)
+        await api.post(API_URL + '/formsubmit/', responseFormsVdd)
             .then((response) => {
                 console.log("response data: ", response.data)
                 alert("Adicionado ao banco de dados")
@@ -157,7 +158,7 @@ class uploadScreen extends Component {
                         <h1>Faça upload do formulário scanneado: </h1>
                     </div>
                     <div className="formUpload">
-                            
+
                                 <form onSubmit={(event) => this.handleSubmit(event)}>
                                     {console.log(upload)}
                                      <Upload onUpload={this.handleUpload} />
@@ -174,7 +175,7 @@ class uploadScreen extends Component {
                                     <img src="../images/contact-form.png" alt="forms-icon" className="icon" />
                                     <p>Preencher Formulário</p>
                                 </button> */}
-                            
+
                     </div>
                 </main>
             </div>

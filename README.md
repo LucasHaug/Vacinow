@@ -1,3 +1,10 @@
+<p align="left">
+
+<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/Vacinow/Frontend?style=for-the-badge">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Vacinow/Frontend/Release?style=for-the-badge">
+
+</p>
+
 # Frontend
 
 ## 🌐 Aplicação remota
@@ -8,12 +15,14 @@ Para acessar a aplicação rodando em ambiente de produção no servidor EC2 da 
 
 Para rodar o projeto é necessário ter docker e docker-compose instalados.
 
-Então, para rodar a aplicação, é necessário executar na raiz do projeto o seguinte comando:
+Então, para rodar a aplicação de frontend, é necessário executar na raiz do projeto o seguinte comando:
 
 
 ```bash
 docker-compose up --build
 ```
+
+A aplicação então se comunica com a API do [Backend](https://github.com/Vacinow/Backend), disponível em https://api.vacinow.tk/. Caso se deseje rodar também o backend localmente, é necessário seguir os passos descritos no [README do Backend](https://github.com/Vacinow/Backend/blob/main/README.md) e também se alterar no frontend a URL do backend (no arquivo `config.js` dentro da pasta `src`), apontando para a URL na qual se iniciou a aplicação.
 
 ## 📝 Documentação
 
