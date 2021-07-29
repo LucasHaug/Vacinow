@@ -14,7 +14,8 @@ var formatted_date = "";
 
 const Form = (props) => {
     var cpf_no_dots = props.forms.cpf.split('.').join("")
-    var formatted_cpf = cpf_no_dots.split('-').join("") 
+    var cpf_no_spaces = cpf_no_dots.split(' ').join("")
+    var formatted_cpf = cpf_no_spaces.split('-').join("") 
     props.forms.cpf = formatted_cpf
 
     Moment.locale('pt-br')
@@ -30,6 +31,9 @@ const Form = (props) => {
     }
     
     props.forms.date = formatted_date
+
+    var nsus_no_spaces = props.forms.nsus.split(' ').join("")
+    props.forms.nsus = nsus_no_spaces
     
     const [name, setName] = useState(props.forms.name);
     const [date, setDate] = useState(props.forms.date);
@@ -38,7 +42,7 @@ const Form = (props) => {
     const [vaccine, setVaccine] = useState(props.forms.vaccine);
     const [lab, setLab] = useState(props.forms.lab);
     const [cpf, setCpf] = useState(formatted_cpf);
-    const [nsus, setNsus] = useState(props.forms.nsus);
+    const [nsus, setNsus] = useState(nsus_no_spaces);
     const [batch, setBatch] = useState(props.forms.batch);
 
     function onChangeName(e){
