@@ -1,4 +1,9 @@
-.upload{
+
+#sendImg{
+    margin-top: 20px;
+}
+
+.formUpload{
     margin: 2rem;
     padding: 2rem;
     
@@ -6,4 +11,16 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    
+}
+.formUpload form{
+    background-color: var(--dark-green);
+    /* background-color: var(--champagne); */
+    
+    padding: 5rem;
+    margin: 1rem; 
+    margin-top: -2rem;
+    margin-right: 9rem;
+    border-radius: 2rem;
 }

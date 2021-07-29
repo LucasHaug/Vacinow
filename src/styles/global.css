@@ -103,3 +103,13 @@ body{
   padding: 1rem;
   margin: 1rem 2rem;
 }
+
+.deleteBtn{
+  margin-left: 80px !important; 
+  margin-bottom: 10px !important;
+  color: var(--gold) !important;
+}
+
+strong{
+  color: white;
+}

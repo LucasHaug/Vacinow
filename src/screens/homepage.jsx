@@ -21,13 +21,13 @@ const Homepage = () => (
                   <p>Upload</p>
               </button>
           </div>
-          <div className="linkBox">
+          {/* <div className="linkBox">
               <h1 className="mainText"> Preencha o formulário online</h1>
               <button className="linkButton" onClick={()=>{window.location = "/registration"}}>
                   <img src="../images/contact-form.png" alt="form-icon" className="icon" />
                   <p>Preencher</p>{" "}
               </button>
-          </div>
+          </div> */}
       </main>
   </div>
 );

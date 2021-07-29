@@ -21,16 +21,6 @@
     padding: 2rem;
 
 }
-.forms{
-    background-color: var(--champagne);
-    display: flex;
-    padding: 2rem;
-    margin: 3rem;
-
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 110%;
-}
 
 .formBtns{
     grid-area: btn;   

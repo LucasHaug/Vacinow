@@ -1,6 +1,5 @@
-import Grid from "react-fast-grid";
 import React,{useState} from "react";
-
+import Moment from "moment";
 import "../../styles/formTemplate.css";
 
 const styles = {
@@ -10,14 +9,35 @@ const styles = {
     },
 };
 
+var formated = false;
+var formatted_date = "";
+
 const Form = (props) => {
+    var cpf_no_dots = props.forms.cpf.split('.').join("")
+    var formatted_cpf = cpf_no_dots.split('-').join("") 
+    props.forms.cpf = formatted_cpf
+
+    Moment.locale('pt-br')
+    
+    if (props.forms.date.length === 10 && formated === false) {
+        formatted_date = new Moment(props.forms.date, "DD/MM/YYYY").format("YYYY-MM-DD")
+        formated = true
+    } 
+    
+    if (props.forms.date.length === 8 && formated === false) {
+        formatted_date = new Moment(props.forms.date, "DD/MM/YY").format("YYYY-MM-DD")
+        formated = true
+    }
+    
+    props.forms.date = formatted_date
+    
     const [name, setName] = useState(props.forms.name);
     const [date, setDate] = useState(props.forms.date);
     const [place, setPlace] = useState(props.forms.place);
     const [age, setAge] = useState(props.forms.age);
     const [vaccine, setVaccine] = useState(props.forms.vaccine);
     const [lab, setLab] = useState(props.forms.lab);
-    const [cpf, setCpf] = useState(props.forms.cpf);
+    const [cpf, setCpf] = useState(formatted_cpf);
     const [nsus, setNsus] = useState(props.forms.nsus);
     const [batch, setBatch] = useState(props.forms.batch);
 
@@ -25,7 +45,17 @@ const Form = (props) => {
         props.forms.name = e.target.value
     }
     function onChangeDate(e){
-        props.forms.date = e.target.value
+        if (e.target.value.length === 10) {
+            formatted_date = new Moment(e.target.value, "DD/MM/YYYY").format("YYYY-MM-DD")
+            formated = true
+        } 
+        
+        if (e.target.value.length === 8) {
+            formatted_date = new Moment(e.target.value, "DD/MM/YY").format("YYYY-MM-DD")
+            formated = true
+        }
+
+        props.forms.date = formatted_date
     }
     function onChangeLocal(e){
         props.forms.place = e.target.value
@@ -51,78 +81,63 @@ const Form = (props) => {
 
     return (
         <form className="forms" style={styles.outer} key={props.forms.id}>
-            <Grid container spacing={2} direction="row">
-                <Grid container spacing={1} alignItems="center" justify="left">
-                    <Grid item>
-                        <div>Nome:</div>
-                    </Grid>
-                    <Grid item>
-                        {name === "" ? <input type="text" id="fname" onChange={(e)=>onChangeName(e) } required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setName("") } value={name} required/>}
-                    </Grid>
-                    <Grid item>
-                        <div>Data aplicação:</div>
-                    </Grid>
-                    <Grid item>
-                        {date === "" ? <input type="text" id="fname" onChange={(e)=>onChangeDate(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setDate("") } value={date}required/>}
-                    </Grid>
-                    <Grid item>
-                        <div>Local de aplicação:</div>
-                    </Grid>
-                    <Grid item>
-                        {place === "" ? <input type="text" id="fname" onChange={(e)=>onChangeLocal(e)}required />
-                        : <input type="text" id="fname" onFocus={(e)=>setPlace("") } value={place}required/>}
-                    </Grid>
-                </Grid>
-                <Grid container spacing={1} alignItems="center" justify="left">
-                    <Grid item>
-                        <div>Idade:</div>
-                    </Grid>
-                    <Grid item>
+            <div className="formCard">
 
-                        {age === "" ? <input type="text" id="fname" onChange={(e)=>onChangeAge(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setAge("") } value={age}required/>}
-                    </Grid>
-                    <Grid item>
-                        <div>Nome da vacina:</div>
-                    </Grid>
-                    <Grid item>
-                        {vaccine === "" ? <input type="text" id="fname" onChange={(e)=>onChangeVaccine(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setVaccine("") } value={vaccine}required/>}
-                    </Grid>
-                    <Grid item>
-                        <div>Laboratório:</div>
-                    </Grid>
-                    <Grid item>
-                        {lab === "" ? <input type="text" id="fname" onChange={(e)=>onChangeLab(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setLab("") } value={lab}required/>}
-                    </Grid>
-                </Grid>
-                <Grid container spacing={1} alignItems="center" justify="left">
-                    <Grid item>
-                        <div>CPF:</div>
-                    </Grid>
-                    <Grid item>
-                        {cpf === "" ? <input type="text" id="fname" onChange={(e)=>onChangeCPF(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setCpf("") } value={cpf} required/>}
-                    </Grid>
-                    <Grid item>
-                        <div>Serviço de Saúde:</div>
-                    </Grid>
-                    <Grid item>
-                        {nsus === "" ? <input type="text" id="fname" onChange={(e)=>onChangeNsus(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setNsus("") } value={nsus} required/>}
-                    </Grid>
-                    <Grid item>
-                        <div>Lote:</div>
-                    </Grid>
-                    <Grid item>
-                        { batch === "" ? <input type="text" id="fname" onChange={(e)=>onChangeBatch(e)} required/>
-                        : <input type="text" id="fname" onFocus={(e)=>setBatch("") } value={batch} required/>}
-                    </Grid>
-                </Grid>
-            </Grid>
+                <div className="form-group">
+                    <label>Nome</label>
+                    {name === "" ? <input type="text" id="fname" onChange={(e)=>onChangeName(e) } required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setName("") } value={name} required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>Data de aplicação</label>
+                    {date === "" ? <input type="text" id="fname" onChange={(e)=>onChangeDate(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setDate("") } value={date}required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>Local de aplicação</label>
+                    {place === "" ? <input type="text" id="fname" onChange={(e)=>onChangeLocal(e)}required />
+                    : <input type="text" id="fname" onFocus={(e)=>setPlace("") } value={place}required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>Idade</label>
+                    {age === "" ? <input type="text" id="fname" onChange={(e)=>onChangeAge(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setAge("") } value={age}required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>Nome da vacina</label>
+                    {vaccine === "" ? <input type="text" id="fname" onChange={(e)=>onChangeVaccine(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setVaccine("") } value={vaccine}required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>Laboratório</label>
+                    {lab === "" ? <input type="text" id="fname" onChange={(e)=>onChangeLab(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setLab("") } value={lab}required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>CPF</label>
+                    {cpf === "" ? <input type="text" id="fname" onChange={(e)=>onChangeCPF(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setCpf("") } value={cpf} required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>CNS</label>
+                    {nsus === "" ? <input type="text" id="fname" onChange={(e)=>onChangeNsus(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setNsus("") } value={nsus} required/>}
+                </div>
+
+                <div className="form-group">
+                    <label>Lote</label>
+                    { batch === "" ? <input type="text" id="fname" onChange={(e)=>onChangeBatch(e)} required/>
+                    : <input type="text" id="fname" onFocus={(e)=>setBatch("") } value={batch} required/>}
+                </div>
+            </div>
+
         </form>
     )
 }

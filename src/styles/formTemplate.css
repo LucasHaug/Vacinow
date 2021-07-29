@@ -1,0 +1,26 @@
+.forms{
+    background-color: var(--champagne);
+    display: flex;
+    padding: 3rem;
+    margin: 2rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 110%;
+}
+
+.formCard{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
+    /* grid-template-columns: repeat(auto-fit,minmax(30%, 1fr)); */
+    grid-gap: 1rem;
+}
+
+.formCard .form-group{
+    display: flex;
+    justify-content: space-between;
+
+    /* margin: 1rem; */
+}
+
