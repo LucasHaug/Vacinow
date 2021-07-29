@@ -78,6 +78,7 @@ class uploadScreen extends Component {
             })
             .catch(function (error) {
                 console.log(error)
+                alert(error.response.data.detail + "\nEnvie um novo arquivo.")
             })
     }
 
