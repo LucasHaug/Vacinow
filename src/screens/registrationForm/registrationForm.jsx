@@ -5,11 +5,13 @@ import formsJson from "./forms.json";
 import "../../styles/registrationForm.css";
 import api from "axios";
 
+import API_URL from "../../config";
+
 var id = 0
 
 function RegistrationForm(props) {
   var initialForms = [formsJson];
-  
+
   initialForms.id = 0
   const [form, setForm] = useState([initialForms]);
 
@@ -35,10 +37,10 @@ function RegistrationForm(props) {
       payload.push(element);
       console.log(payload);
     })
-    
+
     console.log(payload);
 
-    await api.post('https://api.vacinow.tk/formsubmit/',
+    await api.post(API_URL + '/formsubmit/',
       payload
     ).then(function (response) {
         console.log(response.data)
