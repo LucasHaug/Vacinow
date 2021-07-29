@@ -1,5 +1,9 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Vacinow/Frontend/Release?style=for-the-badge)
+<p align="left">
+
+<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/Vacinow/Frontend?style=for-the-badge">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Vacinow/Frontend/Release?style=for-the-badge">
+
+</p>
 
 # Frontend
 
