@@ -1,5 +1,7 @@
 import Grid from "react-fast-grid";
+import React,{useState} from "react";
 
+import "../../styles/formTemplate.css";
 
 const styles = {
     outer: {
@@ -8,8 +10,16 @@ const styles = {
     },
 };
 
-
 const Form = (props) => {
+    const [name, setName] = useState(props.forms.name);
+    const [date, setDate] = useState(props.forms.date);
+    const [place, setPlace] = useState(props.forms.place);
+    const [age, setAge] = useState(props.forms.age);
+    const [vaccine, setVaccine] = useState(props.forms.vaccine);
+    const [lab, setLab] = useState(props.forms.lab);
+    const [cpf, setCpf] = useState(props.forms.cpf);
+    const [nsus, setNsus] = useState(props.forms.nsus);
+    const [batch, setBatch] = useState(props.forms.batch);
 
     function onChangeName(e){
         props.forms.name = e.target.value
@@ -23,7 +33,7 @@ const Form = (props) => {
     function onChangeAge(e){
         props.forms.age= e.target.value
     }
-    function onChangeNameShoot(e){
+    function onChangeVaccine(e){
         props.forms.vaccine = e.target.value
     }
     function onChangeLab(e){
@@ -32,15 +42,14 @@ const Form = (props) => {
     function onChangeCPF(e){
         props.forms.cpf = e.target.value
     }
-    function onChangeService(e){
+    function onChangeNsus(e){
         props.forms.nsus = e.target.value
     }
-    function onChangeLote(e){
+    function onChangeBatch(e){
         props.forms.batch = e.target.value
     }
 
     return (
-
         <form className="forms" style={styles.outer} key={props.forms.id}>
             <Grid container spacing={2} direction="row">
                 <Grid container spacing={1} alignItems="center" justify="left">
@@ -48,19 +57,22 @@ const Form = (props) => {
                         <div>Nome:</div>
                     </Grid>
                     <Grid item>
-                        <input id="fname" onChange={onChangeName}/>
+                        {name === "" ? <input type="text" id="fname" onChange={(e)=>onChangeName(e) } required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setName("") } value={name} required/>}
                     </Grid>
                     <Grid item>
                         <div>Data aplicação:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeDate}/>
+                        {date === "" ? <input type="text" id="fname" onChange={(e)=>onChangeDate(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setDate("") } value={date}required/>}
                     </Grid>
                     <Grid item>
                         <div>Local de aplicação:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeLocal}/>
+                        {place === "" ? <input type="text" id="fname" onChange={(e)=>onChangeLocal(e)}required />
+                        : <input type="text" id="fname" onFocus={(e)=>setPlace("") } value={place}required/>}
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} alignItems="center" justify="left">
@@ -68,19 +80,23 @@ const Form = (props) => {
                         <div>Idade:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeAge}/>
+
+                        {age === "" ? <input type="text" id="fname" onChange={(e)=>onChangeAge(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setAge("") } value={age}required/>}
                     </Grid>
                     <Grid item>
                         <div>Nome da vacina:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeNameShoot}/>
+                        {vaccine === "" ? <input type="text" id="fname" onChange={(e)=>onChangeVaccine(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setVaccine("") } value={vaccine}required/>}
                     </Grid>
                     <Grid item>
                         <div>Laboratório:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeLab}/>
+                        {lab === "" ? <input type="text" id="fname" onChange={(e)=>onChangeLab(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setLab("") } value={lab}required/>}
                     </Grid>
                 </Grid>
                 <Grid container spacing={1} alignItems="center" justify="left">
@@ -88,19 +104,22 @@ const Form = (props) => {
                         <div>CPF:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeCPF}/>
+                        {cpf === "" ? <input type="text" id="fname" onChange={(e)=>onChangeCPF(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setCpf("") } value={cpf} required/>}
                     </Grid>
                     <Grid item>
                         <div>Serviço de Saúde:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeService}/>
+                        {nsus === "" ? <input type="text" id="fname" onChange={(e)=>onChangeNsus(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setNsus("") } value={nsus} required/>}
                     </Grid>
                     <Grid item>
                         <div>Lote:</div>
                     </Grid>
                     <Grid item>
-                        <input onChange={onChangeLote}/>
+                        { batch === "" ? <input type="text" id="fname" onChange={(e)=>onChangeBatch(e)} required/>
+                        : <input type="text" id="fname" onFocus={(e)=>setBatch("") } value={batch} required/>}
                     </Grid>
                 </Grid>
             </Grid>

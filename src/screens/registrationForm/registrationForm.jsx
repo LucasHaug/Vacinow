@@ -1,26 +1,52 @@
 import React, { useState } from "react";
 import FormTemplate from "./formTemplate";
 
-import formsJson from "./forms.json"
+import formsJson from "./forms.json";
 import "../../styles/registrationForm.css";
+import api from "axios";
 
 var id = 0
 
-function RegistrationForm() {
+function RegistrationForm(props) {
   var initialForms = [formsJson];
+  
   initialForms.id = 0
   const [form, setForm] = useState([initialForms]);
 
   function formList() {
     return form.map((formVecSend) => {
-      console.log(formVecSend.id)
+      console.log(formVecSend.id, formVecSend)
       return <FormTemplate forms={formVecSend} key={formVecSend.id} />;
     });
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     // manda pelo axios
     console.log("form atulaizado", form)
+    console.log("n sei ", form[0][0])
+
+    var payload = [ ]
+
+    form.forEach(element => {
+      console.log("teste", element);
+      delete element['0'];
+      console.log("teste2", element);
+
+      payload.push(element);
+      console.log(payload);
+    })
+    
+    console.log(payload);
+
+    await api.post('https://api.vacinow.tk/formsubmit/',
+      payload
+    ).then(function (response) {
+        console.log(response.data)
+        alert(response.data)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 
   return (
@@ -42,10 +68,7 @@ function RegistrationForm() {
 
         <div className="formInputs">
           <div className="formTable">
-            <li>
               {formList()}
-
-            </li>
             <button
               type="submit"
               onClick={() => {
