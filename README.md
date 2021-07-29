@@ -1,5 +1,9 @@
 # Frontend
 
+## 🌐 Aplicação remota
+
+Para acessar a aplicação rodando em ambiente de produção no servidor EC2 da Amazon, acesse o link: https://vacinow.tk/.
+
 ## 🏁 Rodando o projeto
 
 Para rodar o projeto é necessário ter docker e docker-compose instalados.
