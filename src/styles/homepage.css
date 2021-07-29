@@ -1,0 +1,30 @@
+.links{
+    /* display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+
+    grid-template-areas: 
+    'left right'; */
+
+    display: flex; 
+
+}
+
+.links .linkBox{
+    background-color: var(--champagne);
+    border-radius: 1rem;
+    
+    margin: 1rem 5rem;
+    margin-left: 25vw;
+    padding: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.links .linkBox h1{
+    margin: 1rem;
+    
+}

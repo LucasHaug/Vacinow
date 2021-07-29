@@ -1,0 +1,54 @@
+/* .container  */
+.container #upload{ 
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 2fr;
+
+    grid-template-areas: 
+    'header'
+    'top' 
+    'bottom';
+
+    width: 100%;
+}
+
+.container #upload .header{
+    grid-area: header;
+}
+
+#top{
+    grid-area: top;
+}
+#bottom{
+    grid-area: bottom;
+    
+    display: flex;
+    align-items: center;
+    
+}
+
+.icon{
+    height: 2.5rem;
+    margin: 0 1rem;
+}
+
+.fileUpload{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bottom h2{
+    width: 100%;
+}
+
+/* 
+label {
+    cursor: pointer;
+ }
+ 
+ #imgButton {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ } */

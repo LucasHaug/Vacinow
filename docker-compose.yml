@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  vacinow_front:
+    image: vacinow_front
+    restart: unless-stopped
+    build: ./
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+
+    ports:
+        - 3000:3000

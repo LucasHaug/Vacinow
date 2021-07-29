@@ -1,0 +1,115 @@
+/*
+* Configurações comuns a todas as páginas
+*/
+
+/* remove css pré-definido pelo navegador */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  /* variáveis: cores do pallete */
+  --dark-green: #236026;
+  --green: #2A752E;
+  --olive: #958717;
+  --gold: #CA900C;
+  --orange: #FF9800;
+  --yellow: #FFA117;
+  --champagne: #ffd08b;
+
+  /* seta o padrão do rem como 10px */
+  font-size: 62.5%;
+}
+
+body{
+  display: flex;
+  
+  /* deixar as telas sem scroll */
+  height: 100vh; 
+  width: 100vw;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 1.2rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
+}
+
+.content{
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* mesmo Header em todas as telas */
+.content header{
+  width: 70%;
+  margin: 0 20rem;
+}
+
+.content header img{
+  width: 100%;
+}
+
+.content header hr{
+  display: flex;
+  align-items: center; /* define alinhamento vertical */
+  
+  border: 0.2rem solid var(--olive);
+  background-color: var(--olive); 
+  opacity: 0.5;
+}
+
+/* Descrição em todas as telas */
+.content .description{
+  display: flex;
+  justify-content: center;
+  margin-right: 15rem; /* talvez alinhar melhor */
+  padding: 2rem 2rem;
+}
+
+/* Botões comuns a todas as telas */
+.content button{
+  background-color: var(--orange);
+
+  border-radius: 2rem;
+  border-width: 1rem;
+  box-shadow: 0 0 1rem var(--yellow);
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  padding: 1rem;
+
+  box-shadow: 0 0 0.5rem var(--yellow);
+  /* width definido por página */
+}
+
+.content button:hover{
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.content .icon{
+  height: 5rem;
+  margin: 2rem 2rem;
+}
+
+.content button p{
+  font-size: clamp(14px, 8rem, 2vw); /* flexibiidade no tamanho - só peguei de outro lugar mesmo, nem sei quanto ficaria bom */
+
+  padding: 1rem;
+  margin: 1rem 2rem;
+}
+
+.deleteBtn{
+  margin-left: 80px !important; 
+  margin-bottom: 10px !important;
+  color: var(--gold) !important;
+}
+
+strong{
+  color: white;
+}
