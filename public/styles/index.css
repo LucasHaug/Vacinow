@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html{
+  --dark-green: #236026;
+  --green: #2A752E;
+  --olive: #958717;
+  --gold: #CA900C;
+  --orange: #FF9800;
+  --yellow: #FFA117;
+  --champagne: #ffd08b;
+
+  font-size: 62.5%; /* seta o padrão do rem como 10px */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button:hover{
+  filter: brightness(1.2);
+}
